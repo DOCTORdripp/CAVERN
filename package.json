@@ -1,6 +1,6 @@
 {
   "name": "cavern",
-  "description": "a Game Jam 23 project by DOCTORdripp",
+  "description": "CAVERN: the game - a 2023 Decentraland Game Jam submission by DOCTORdripp",
   "version": "1.0.0",
   "dependencies": {
     "@dcl-sdk/utils": "next",
@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "sdk-commands build --skip-install",
-    "deploy": "sdk-commands deploy",
+    "deploy": "sdk-commands deploy --skip-build",
     "start": "sdk-commands start"
   },
   "devDependencies": {

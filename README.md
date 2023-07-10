@@ -1,8 +1,12 @@
 # CAVERN the game
 
+## Play the game now
+
+https://play.decentraland.org/?realm=CAVERN.dcl.eth
+
 _Demo of CAVERN gameplay._
 
-![demo](https://github.com/doctordripp/cavern/blob/master/screenshots/cavern-game.gif)
+<img src="/screenshots/cavern-game.gif">
 
 ## Description
 
