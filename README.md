@@ -2,7 +2,7 @@
 
 _Demo of CAVERN gameplay._
 
-![demo](https://github.com/doctordripp/cavern/blob/master/screenshots/cavern-game.gif)
+<img src="/screenshots/cavern-game.gif">
 
 ## Description
 
