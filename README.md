@@ -1,6 +1,6 @@
 # CAVERN the game
 
-## Play the game now
+## Play it now
 
 https://play.decentraland.org/?realm=CAVERN.dcl.eth
 
