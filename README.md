@@ -12,6 +12,20 @@ _Demo of CAVERN gameplay._
 
 A quest through a dreamlike world filled with Doge-like creatures. Help save the CAVERN and its inhabitants from certain doom, and find yourself some nice rewards.
 
+## Instructions
+
+Help your new friend through an embarrasing incident and help him find his uncle! You will be prompted to descend into the CAVERN where you should avoid fatal falls until you get to Uncle.
+
+Help Uncle clear his swamp that's been taken over by the undead in this Zombie Shooter 2 + Zombie (solo script) mini-game.
+
+Next you will be prompted to find a hidden relic in this modified PowerCube demo. Grabbing the relic will disable a mini barricade, allowing you onto the next part of the map where you can dunk the relic into the Fountain of Power using the F key. This will remove the remaining barricade, initiating the maze mini-game.
+
+The maze will be unlocked and there will be a 50% chance of mirroring the course. Find the mystical component, then bring it back to Uncle for inspection. He will need some time to inspect it, so come back after 1 week. The exit to the cave is on the far end of the swamp.
+
+More developments to come, including prize/giveaway mechanisms, additional hidden content, and token-gated experiences.
+
+## Built using
+
 **Awesome Repository DCL scripts utilized**
 
 Custom Zombie Mini-Game
@@ -41,17 +55,6 @@ https://www.blockadelabs.com/ - AI generated skybox
 
 https://chat.openai.com/chat - coding assistance
 
-## Instructions
-
-Help your new friend through an embarrasing incident and help him find his uncle! You will be prompted to descend into the CAVERN where you should avoid fatal falls until you get to Uncle.
-
-Help Uncle clear his swamp that's been taken over by the undead in this Zombie Shooter 2 + Zombie (solo script) mini-game.
-
-Next you will be prompted to find a hidden relic in this modified PowerCube demo. Grabbing the relic will disable a mini barricade, allowing you onto the next part of the map where you can dunk the relic into the Fountain of Power using the F key. This will remove the remaining barricade, initiating the maze mini-game.
-
-The maze will be unlocked and there will be a 50% chance of mirroring the course. Find the mystical component, then bring it back to Uncle for inspection. He will need some time to inspect it, so come back after 1 week. The exit to the cave is on the far end of the swamp.
-
-More developments to come, including prize/giveaway mechanisms, additional hidden content, and token-gated experiences.
 
 ## Try it out
 
