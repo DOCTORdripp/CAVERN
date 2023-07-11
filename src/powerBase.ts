@@ -1,13 +1,4 @@
-import {
-  AudioSource,
-  engine,
-  GltfContainer,
-  PointerEvents,
-  PointerEventType,
-  Transform,
-  VisibilityComponent,
-  Entity
-} from '@dcl/sdk/ecs'
+import { AudioSource, engine, GltfContainer, PointerEvents, PointerEventType, Transform, VisibilityComponent } from '@dcl/sdk/ecs'
 import { Vector3, Color4 } from '@dcl/sdk/math'
 import { Particle, particleSystem } from './particles'
 import { createSound } from './sound'
@@ -15,7 +6,7 @@ import * as utils from '@dcl-sdk/utils'
 import { PowerCube } from './powerCube'
 import * as npc from 'dcl-npc-toolkit'
 import { beckoning } from './dialogs'
-import { splash, relicOnly, marsha2, indicatorArrowTeal, indicatorArrowTeal2, indicatorArrowTeal3 } from './'
+import { splash, relicOnly, marsha2, indicatorArrowTeal, indicatorArrowTeal2, indicatorArrowTeal3, indicatorArrowPurple2, indicatorArrowPurple3 } from '.'
 
 // Power glows
 const powerBlueGlowEntity = engine.addEntity()
@@ -73,9 +64,11 @@ export function togglePower(isPowerOn: boolean) {
     }
 
     // TODO: change this workaround until the DisableComponent is available
-    // Hide the blue glow
+    // Hide the blue glow & purple indicator arrows
     Transform.getMutable(powerBlueGlowEntity).scale = Vector3.Zero();
     Transform.getMutable(forcefieldEntity).scale = Vector3.Zero();
+    Transform.getMutable(indicatorArrowPurple2).scale = Vector3.Zero();
+    Transform.getMutable(indicatorArrowPurple3).scale = Vector3.Zero();
 
     engine.removeSystem(particleSystem);
     AudioSource.getMutable(powerDown).playing = true;

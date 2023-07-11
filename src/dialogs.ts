@@ -2,7 +2,7 @@ import { Dialog } from 'dcl-npc-toolkit'
 import { zombieKiller } from './systems/zombieKiller'
 import { Transform, engine, AudioSource } from '@dcl/sdk/ecs'
 import { Vector3 } from '@dcl/sdk/math'
-import {zombieCave2, zombieCaveOpen, treeWall9, doorClosed, powerCubeEntity, clickableEntity, song3, song4, song5, triggerGameStart } from '.'
+import {zombieCave2, zombieCaveOpen, treeWall9, doorClosed, powerCubeEntity, clickableEntity, song3, song4, song5, triggerGameStart, indicatorArrowPurple1, indicatorArrowGreen } from '.'
 
 export let testscript: Dialog[] = [
   {
@@ -57,6 +57,7 @@ export let uncle2: Dialog[] = [
       AudioSource.getMutable(song5).playing = true;
       Transform.getMutable(powerCubeEntity).scale = Vector3.One();
       Transform.getMutable(powerCubeEntity).position = Vector3.create(96, 1.3, 33);
+      Transform.getMutable(indicatorArrowPurple1).scale = Vector3.create(6,6,6);
           }
   },
   {
@@ -170,7 +171,7 @@ AudioSource.create(doorShut, {
 
 export let uncleFinale: Dialog[] = [
   {
-    text: `IT'S FINALLY MINE! NOW MY EXPERIMENT WILL FINALLY BE COMPLETE!`,
+    text: `IT'S FINALLY MINE! NOW MY EXPERIMENT CAN BE COMPLETED!`,
     portrait: {
       path: 'images/doge.png'
     }
@@ -187,6 +188,7 @@ export let uncleFinale: Dialog[] = [
       Transform.getMutable(clickableEntity).scale = Vector3.create(3, 3, 3);
       Transform.getMutable(zombieCave2).scale = Vector3.Zero();
       Transform.getMutable(zombieCaveOpen).scale = Vector3.create(0.4, 0.4, 0.4);
+      Transform.getMutable(indicatorArrowGreen).scale = Vector3.create(6,6,6);
 
     },
   },

@@ -11,33 +11,17 @@ import { zombieKiller } from './systems/zombieKiller'
 import { createZombie} from './modules/zombie'
 import * as utils from '@dcl-sdk/utils'
 import { togglePower } from './powerBase'
-import {
-  VisibilityComponent
-} from '@dcl/sdk/ecs'
+import { VisibilityComponent } from '@dcl/sdk/ecs'
 import * as npc from 'dcl-npc-toolkit'
-
 import { setupUi, toggleMenuVisibility } from './setupUI'
 import { testscript, uncle2, uncleFinale, callingHelp, beatGame, fightComplete } from './dialogs'
 import { createDogeNpc } from './dogeNpc'
+import { AudioSource, engine, GltfContainer, InputAction, PointerEvents, PointerEventType, Transform, 
+  MeshCollider, Material, MeshRenderer, pointerEventsSystem, NftShape } from '@dcl/sdk/ecs'
 
-import {
-  AudioSource,
-  AvatarAnchorPointType,
-  AvatarAttach,
-  engine,
-  GltfContainer,
-  InputAction,
-  inputSystem,
-  PointerEvents,
-  PointerEventType,
-  Transform,
-  MeshCollider, Material, MeshRenderer, pointerEventsSystem,
-  Entity, NftShape,
-  ColliderLayer, executeTask
-} from '@dcl/sdk/ecs'
-import { Vector2 } from 'decentraland-ecs'
+// LOAD FIRST - HIGH PRIORITY
 
-//fit thru Cave Teleport
+// Opening Scene - Fit Through Cave Teleport
 const clickableEntity2 = engine.addEntity()
 MeshRenderer.setBox(clickableEntity2)
 MeshCollider.setBox(clickableEntity2)
@@ -55,7 +39,6 @@ Transform.create(cavePortalBeatGame, { position: Vector3.create(13, 1, -10),  ro
 const cavePortalEnvironment = engine.addEntity()
 GltfContainer.create(cavePortalEnvironment, { src: 'models/cavePortalEnvironment.glb' })
 Transform.create(cavePortalEnvironment, { position: Vector3.create(18, -1.7, -10),  scale: Vector3.create(1, 1, 1) })
-
 
 pointerEventsSystem.onPointerDown(
   {
@@ -94,131 +77,6 @@ export let stuckDoge = npc.create(
     }
   }
 )
-
-
-// Create entity
-const song1 = engine.addEntity()
-
-// Create AudioSource component
-AudioSource.create(song1, {
-	audioClipUrl: 'sounds/hauntedCave.mp3',
-	loop: true,
-	playing: true,
-  volume: 1
-})
-
-// Create entity
-const song2 = engine.addEntity()
-Transform.create(song2, {
-  position: Vector3.create(80, 50, 80)
-})
-
-// Create AudioSource component
-AudioSource.create(song2, {
-	audioClipUrl: 'sounds/waterDrips.mp3',
-	loop: true,
-	playing: true,
-  volume: 1
-})
-
-// Create entity
-export const song3 = engine.addEntity()
-Transform.create(song3, {
-  position: Vector3.create(80, 80, 80)
-})
-
-
-// Create AudioSource component
-AudioSource.create(song3, {
-	audioClipUrl: 'sounds/dreamSus.mp3',
-	loop: true,
-	playing: true,
-  volume: 1
-})
-
-// Create entity
-export const song4 = engine.addEntity()
-Transform.create(song4, {
-  position: Vector3.create(40, 10, 40)
-})
-
-// Create AudioSource component
-AudioSource.create(song4, {
-	audioClipUrl: 'sounds/dreamFight.mp3',
-	loop: true,
-	playing: false,
-  volume: 1
-})
-
-// Create entity
-export const song5 = engine.addEntity()
-Transform.create(song5, {
-  position: Vector3.create(40, 10, 44)
-})
-
-// Create AudioSource component
-AudioSource.create(song5, {
-	audioClipUrl: 'sounds/dreamWork.mp3',
-	loop: true,
-	playing: false,
-  volume: 1
-})
-
-// Create entity
-export const hammer = engine.addEntity()
-Transform.create(hammer, {
-  position: Vector3.create(30, 10, 25)
-})
-
-// Create AudioSource component
-AudioSource.create(hammer, {
-	audioClipUrl: 'sounds/hammer.mp3',
-	loop: false,
-	playing: false,
-  volume: 1
-})
-
-// Create entity
-export const splash = engine.addEntity()
-Transform.create(splash, {
-  position: Vector3.create(40, 5, 40)
-})
-
-// Create AudioSource component
-AudioSource.create(splash, {
-	audioClipUrl: 'sounds/splash.mp3',
-	loop: false,
-	playing: false,
-  volume: 1
-})
-
-// Create entity
-export const electricity = engine.addEntity()
-Transform.create(electricity, {
-  position: Vector3.create(40, 15, 80)
-})
-
-// Create AudioSource component
-AudioSource.create(electricity, {
-	audioClipUrl: 'sounds/electricity.mp3',
-	loop: false,
-	playing: false,
-  volume: 1
-})
-
-// Create entity
-export const death = engine.addEntity()
-Transform.create(death, {
-  position: Vector3.create(90, 90, 100)
-})
-
-// Create AudioSource component
-AudioSource.create(death, {
-	audioClipUrl: 'sounds/death.wav',
-	loop: false,
-	playing: false,
-  volume: 1
-})
 
 //Call for Help zone
 const helpZone = utils.addTestCube(
@@ -300,7 +158,7 @@ export const zombieCaveGate = engine.addEntity()
 GltfContainer.create(zombieCaveGate, {src: 'models/zombieCaveGate.glb'})
 Transform.create(zombieCaveGate,{
   position: Vector3.create(63, 5, 36),
-  scale: Vector3.create(0,0,0),
+  scale: Vector3.Zero(),
   rotation: Quaternion.fromEulerDegrees(0, -10, 0)})                   
 
 //exit
@@ -308,7 +166,7 @@ export const clickableEntity = engine.addEntity()
 MeshRenderer.setBox(clickableEntity)
 MeshCollider.setBox(clickableEntity)
 VisibilityComponent.createOrReplace(clickableEntity, { visible: false });
-Transform.create(clickableEntity, { position: Vector3.create(87, 3, 35), scale: Vector3.create(0,0,0) })
+Transform.create(clickableEntity, { position: Vector3.create(87, 3, 35), scale: Vector3.Zero() })
 
 pointerEventsSystem.onPointerDown(
   {
@@ -323,6 +181,7 @@ pointerEventsSystem.onPointerDown(
     engine.removeEntity(cavePortal);
     Transform.getMutable(cavePortalBeatGame).scale = Vector3.create(0.8, 0.8, 0.8);
     npc.talk(stuckDoge, beatGame)
+    Transform.getMutable(indicatorArrowGreen).scale = Vector3.Zero();
   }
 )
 
@@ -886,6 +745,7 @@ utils.triggers.addTrigger(kerSplat, utils.NO_LAYERS, utils.LAYER_1, [{type: 'box
   AudioSource.getMutable(death).playing = true;
 })
 
+// Double first trigger zone in case first one fails
 utils.triggers.addTrigger(kerSplat1, utils.NO_LAYERS, utils.LAYER_1, [{type: 'box', position: {x: 45, y: 28, z: 95}, scale: {x: 110, y: 1, z: 120}}], function(kersplatBackup) {
   console.log(`KERSPLAT! Try Again!`)
   movePlayerTo({ newRelativePosition: Vector3.create(sceneSizeX / 2, height / 2 + 2, 113),
@@ -966,6 +826,8 @@ engine.addSystem(gameLogicSystem)
 //debug
 utils.triggers.enableDebugDraw(false)
 
+// LOAD LAST - LOW PRIORITY
+
 export function ensureGameController() {
 if (GameControllerComponent.has(gameEntity)) {
   return GameControllerComponent.getMutable(gameEntity)
@@ -980,7 +842,7 @@ export const indicatorArrowTeal = engine.addEntity()
 GltfContainer.create(indicatorArrowTeal, { src: 'models/indicatorArrow_teal.glb' })
 Transform.create(indicatorArrowTeal, {
   position: Vector3.create(48, 3, 74),
-  scale: Vector3.create(0,0,0)
+  scale: Vector3.Zero()
 })
 
 //indicatorArrowL
@@ -988,7 +850,7 @@ export const indicatorArrowTeal2 = engine.addEntity()
 GltfContainer.create(indicatorArrowTeal2, { src: 'models/indicatorArrow_teal.glb' })
 Transform.create(indicatorArrowTeal2, {
   position: Vector3.create(17, 3, 67),
-  scale: Vector3.create(0,0,0),
+  scale: Vector3.Zero(),
   rotation: Quaternion.fromEulerDegrees(0, -45, 0)
 })
 
@@ -997,8 +859,44 @@ export const indicatorArrowTeal3 = engine.addEntity()
 GltfContainer.create(indicatorArrowTeal3, { src: 'models/indicatorArrow_teal.glb' })
 Transform.create(indicatorArrowTeal3, {
   position: Vector3.create(83, 3, 67),
-  scale: Vector3.create(0,0,0),
+  scale: Vector3.Zero(),
   rotation: Quaternion.fromEulerDegrees(0, 45, 0)
+})
+
+//indicatorArrowDeepSwamp enter
+export const indicatorArrowPurple1 = engine.addEntity()
+GltfContainer.create(indicatorArrowPurple1, { src: 'models/indicatorArrow_purple.glb' })
+Transform.create(indicatorArrowPurple1, {
+  position: Vector3.create(93, 7, 17),
+  scale: Vector3.Zero(),
+  rotation: Quaternion.fromEulerDegrees(0, 90, 0)
+})
+
+//indicatorArrowDeepSwamp exit
+export const indicatorArrowPurple2 = engine.addEntity()
+GltfContainer.create(indicatorArrowPurple2, { src: 'models/indicatorArrow_purple.glb' })
+Transform.create(indicatorArrowPurple2, {
+  position: Vector3.create(91, 4, 20),
+  scale: Vector3.Zero(),
+  rotation: Quaternion.fromEulerDegrees(0, 10, -90)
+})
+
+//indicatorArrowDeepSwamp exit turn
+export const indicatorArrowPurple3 = engine.addEntity()
+GltfContainer.create(indicatorArrowPurple3, { src: 'models/indicatorArrow_purple.glb' })
+Transform.create(indicatorArrowPurple3, {
+  position: Vector3.create(49, 4, 26),
+  scale: Vector3.Zero(),
+  rotation: Quaternion.fromEulerDegrees(0, 90, -90)
+})
+
+//indicatorArrowDeepSwamp exit finale
+export const indicatorArrowGreen = engine.addEntity()
+GltfContainer.create(indicatorArrowGreen, { src: 'models/indicatorArrow_green.glb' })
+Transform.create(indicatorArrowGreen, {
+  position: Vector3.create(91, 4, 32),
+  scale: Vector3.Zero(),
+  rotation: Quaternion.fromEulerDegrees(0, 30, -90)
 })
 
 export const powerCubeEntity = createPowerCube(Vector3.create(96, 5.3, 33), 'models/powerRelic.glb')
@@ -1008,7 +906,7 @@ export const powerCubeEntity = createPowerCube(Vector3.create(96, 5.3, 33), 'mod
     GltfContainer.create(relicOnly, { src: 'models/relicOnly.glb' })
     Transform.create(relicOnly, {
       position: Vector3.create(41, 0.3, 64),
-      scale: Vector3.create(0,0,0)
+      scale: Vector3.Zero()
     })
 
                 //zombieCave2
@@ -1029,6 +927,129 @@ export const powerCubeEntity = createPowerCube(Vector3.create(96, 5.3, 33), 'mod
                   rotation: Quaternion.fromEulerDegrees(0, 205, 0)
                 })         
 
-engine.addSystem(zombieKiller)
+// Music - Song 1 - Ambience Eery
+const song1 = engine.addEntity()
 
+// Create AudioSource component
+AudioSource.create(song1, {
+	audioClipUrl: 'sounds/hauntedCave.mp3',
+	loop: true,
+	playing: true,
+  volume: 1
+})
+
+// Music - Song 2 - Ambience Dripping
+const song2 = engine.addEntity()
+Transform.create(song2, {
+  position: Vector3.create(80, 50, 80)
+})
+
+// Create AudioSource component
+AudioSource.create(song2, {
+	audioClipUrl: 'sounds/waterDrips.mp3',
+	loop: true,
+	playing: true,
+  volume: 1
+})
+
+// Music - Song 3 - Beginning Soundtrack
+export const song3 = engine.addEntity()
+Transform.create(song3, {
+  position: Vector3.create(80, 80, 80)
+})
+
+
+// Create AudioSource component
+AudioSource.create(song3, {
+	audioClipUrl: 'sounds/dreamSus.mp3',
+	loop: true,
+	playing: true,
+  volume: 1
+})
+
+// Music - Song 4 - Zombie Fight Soundtrack
+export const song4 = engine.addEntity()
+Transform.create(song4, {
+  position: Vector3.create(40, 10, 40)
+})
+
+// Create AudioSource component
+AudioSource.create(song4, {
+	audioClipUrl: 'sounds/dreamFight.mp3',
+	loop: true,
+	playing: false,
+  volume: 1
+})
+
+// Music - Song 5 - Solving PowerCube Maze Soundtrack
+export const song5 = engine.addEntity()
+Transform.create(song5, {
+  position: Vector3.create(40, 10, 44)
+})
+
+// Create AudioSource component
+AudioSource.create(song5, {
+	audioClipUrl: 'sounds/dreamWork.mp3',
+	loop: true,
+	playing: false,
+  volume: 1
+})
+
+// SFX - Hammering - Zombie Fight Scene End
+export const hammer = engine.addEntity()
+Transform.create(hammer, {
+  position: Vector3.create(30, 10, 25)
+})
+
+// Create AudioSource component
+AudioSource.create(hammer, {
+	audioClipUrl: 'sounds/hammer.mp3',
+	loop: false,
+	playing: false,
+  volume: 1
+})
+
+// SFX - Splash - PowerCube End
+export const splash = engine.addEntity()
+Transform.create(splash, {
+  position: Vector3.create(40, 5, 40)
+})
+
+// Create AudioSource component
+AudioSource.create(splash, {
+	audioClipUrl: 'sounds/splash.mp3',
+	loop: false,
+	playing: false,
+  volume: 1
+})
+
+// SFX - Electricity - Maze End
+export const electricity = engine.addEntity()
+Transform.create(electricity, {
+  position: Vector3.create(40, 15, 80)
+})
+
+// Create AudioSource component
+AudioSource.create(electricity, {
+	audioClipUrl: 'sounds/electricity.mp3',
+	loop: false,
+	playing: false,
+  volume: 1
+})
+
+// SFX - Death - Kersplat Death
+export const death = engine.addEntity()
+Transform.create(death, {
+  position: Vector3.create(90, 90, 100)
+})
+
+// Create AudioSource component
+AudioSource.create(death, {
+	audioClipUrl: 'sounds/death.wav',
+	loop: false,
+	playing: false,
+  volume: 1
+})
+
+engine.addSystem(zombieKiller)
 engine.addSystem(moveSystem)

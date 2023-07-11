@@ -1,23 +1,11 @@
-import {
-  engine,
-  GltfContainer,
-  InputAction,
-  PBPointerEvents,
-  PointerEventType,
-  PointerEvents,
-  Schemas,
-  Transform,
-  pointerEventsSystem,
-  AudioSource,
-  AvatarAttach,
-  AvatarAnchorPointType,
-  inputSystem
-} from '@dcl/sdk/ecs'
+import { engine, GltfContainer, InputAction, PointerEventType, PointerEvents, Schemas, Transform, 
+  pointerEventsSystem, AudioSource, AvatarAttach,  AvatarAnchorPointType, inputSystem } from '@dcl/sdk/ecs'
 import { Quaternion, Vector3 } from '@dcl/sdk/math'
 import * as utils from '@dcl-sdk/utils'
 import { createSound } from './sound'
 import { miniforcefieldEntity } from './powerBase'
 import {particleParentEntity2} from './particles'
+import { indicatorArrowPurple1, indicatorArrowPurple2, indicatorArrowPurple3 } from '.'
 
 export const PowerCube = engine.defineComponent('PowerCube', {
   isGrabbed: Schemas.Boolean
@@ -47,9 +35,12 @@ export function createPowerCube(position: Vector3, gltfSrc: string) {
         powerCube.isGrabbed = true
         AudioSource.getMutable(cubePickUpSound).playing = true
 
-        //disable mini force field
+        //disable mini force field & indicator arrow swap
         Transform.getMutable(miniforcefieldEntity).scale = Vector3.Zero()
         Transform.getMutable(particleParentEntity2).scale = Vector3.Zero()
+        Transform.getMutable(indicatorArrowPurple1).scale = Vector3.Zero();
+        Transform.getMutable(indicatorArrowPurple2).scale = Vector3.create(6,6,6);
+        Transform.getMutable(indicatorArrowPurple3).scale = Vector3.create(6,6,6);
 
         // Calculates the crate's position relative to the camera
         transform.position = Vector3.Zero()
