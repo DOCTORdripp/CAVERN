@@ -5,25 +5,19 @@ import { movePlayerTo } from '~system/RestrictedActions'
 import { Quaternion, Vector3, Color4 } from '@dcl/sdk/math'
 import { height, sceneSizeX, sceneSizeZ, radiusMultiplier } from './resources'
 import { GameControllerComponent } from './components/gameController'
-import { createCone } from './factory/cone'
 import { createNft } from './factory/nft'
-import { playSound } from './factory/sound'
-import { createText } from './factory/text'
-import { createZombieOld } from './factory/zombie'
 import { moveSystem } from './systems/moveZombie'
 import { zombieKiller } from './systems/zombieKiller'
 import { createZombie} from './modules/zombie'
-import { ReactEcsRenderer} from '@dcl/sdk/react-ecs'
 import * as utils from '@dcl-sdk/utils'
 import { togglePower } from './powerBase'
-import { createSound } from './sound'
 import {
   VisibilityComponent
 } from '@dcl/sdk/ecs'
 import * as npc from 'dcl-npc-toolkit'
 
 import { setupUi, toggleMenuVisibility } from './setupUI'
-import { testscript, uncle2, uncleFinale, callingHelp, beatGame } from './dialogs'
+import { testscript, uncle2, uncleFinale, callingHelp, beatGame, fightComplete } from './dialogs'
 import { createDogeNpc } from './dogeNpc'
 
 import {
@@ -936,6 +930,7 @@ function win() {
   engine.removeEntity(marsha)
   Transform.getMutable(marsha2).scale = Vector3.create(2, 2, 2);
   Transform.getMutable(marsha2).position = Vector3.create(4, 14, 39);
+  npc.talk(marsha2, fightComplete)
 }
 
 function endGame() {

@@ -38,9 +38,19 @@ export let testscript: Dialog[] = [
   }
 ]
 
+export let fightComplete: Dialog[] = [
+  {
+    text: `Great job! Clear out the rest, then come back and talk to me`,
+    portrait: {
+      path: 'images/doge.png'
+    },
+    isEndOfDialog: true
+  }
+]
+
 export let uncle2: Dialog[] = [
   {
-    text: `Now that evil is gone, please help find my family heirloom!`,
+    text: `Now that evil is gone, please help find my family heirloom! I believe it was taken deep into the swamp.`,
     triggeredByNext: () => {
       console.log('song4 ended')
       AudioSource.getMutable(song4).playing = false;
@@ -63,11 +73,11 @@ export let uncle2: Dialog[] = [
     ]
   },
   {
-    text: `Press E to pick up the relic - I mean heirloom and F to drop`,
+    text: `Press E to pick up the relic - I mean heirloom and F to dunk it in the Fountain of Power`,
     isEndOfDialog: true
   },
   {
-    text: `Just go for nice walk and ponder it over. Press E to pick up and F to drop`,
+    text: `Just go for nice walk deep in the swamp and ponder it over. Press E to pick up and F to drop`,
     isEndOfDialog: true
   }
 ]
