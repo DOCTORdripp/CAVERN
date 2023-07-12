@@ -20,6 +20,129 @@ import { AudioSource, engine, GltfContainer, InputAction, PointerEvents, Pointer
   MeshCollider, Material, MeshRenderer, pointerEventsSystem, NftShape } from '@dcl/sdk/ecs'
 
 // LOAD FIRST - HIGH PRIORITY
+// Music - Song 1 - Ambience Eery
+const song1 = engine.addEntity()
+
+// Create AudioSource component
+AudioSource.create(song1, {
+	audioClipUrl: 'sounds/hauntedCave.mp3',
+	loop: true,
+	playing: true,
+  volume: 1
+})
+
+// Music - Song 2 - Ambience Dripping
+const song2 = engine.addEntity()
+Transform.create(song2, {
+  position: Vector3.create(80, 50, 80)
+})
+
+// Create AudioSource component
+AudioSource.create(song2, {
+	audioClipUrl: 'sounds/waterDrips.mp3',
+	loop: true,
+	playing: true,
+  volume: 1
+})
+
+// Music - Song 3 - Beginning Soundtrack
+export const song3 = engine.addEntity()
+Transform.create(song3, {
+  position: Vector3.create(80, 80, 80)
+})
+
+
+// Create AudioSource component
+AudioSource.create(song3, {
+	audioClipUrl: 'sounds/dreamSus.mp3',
+	loop: true,
+	playing: true,
+  volume: 1
+})
+
+// Music - Song 4 - Zombie Fight Soundtrack
+export const song4 = engine.addEntity()
+Transform.create(song4, {
+  position: Vector3.create(40, 10, 40)
+})
+
+// Create AudioSource component
+AudioSource.create(song4, {
+	audioClipUrl: 'sounds/dreamFight.mp3',
+	loop: true,
+	playing: false,
+  volume: 1
+})
+
+// Music - Song 5 - Solving PowerCube Maze Soundtrack
+export const song5 = engine.addEntity()
+Transform.create(song5, {
+  position: Vector3.create(40, 10, 44)
+})
+
+// Create AudioSource component
+AudioSource.create(song5, {
+	audioClipUrl: 'sounds/dreamWork.mp3',
+	loop: true,
+	playing: false,
+  volume: 1
+})
+
+// SFX - Hammering - Zombie Fight Scene End
+export const hammer = engine.addEntity()
+Transform.create(hammer, {
+  position: Vector3.create(30, 10, 25)
+})
+
+// Create AudioSource component
+AudioSource.create(hammer, {
+	audioClipUrl: 'sounds/hammer.mp3',
+	loop: false,
+	playing: false,
+  volume: 1
+})
+
+// SFX - Splash - PowerCube End
+export const splash = engine.addEntity()
+Transform.create(splash, {
+  position: Vector3.create(40, 5, 40)
+})
+
+// Create AudioSource component
+AudioSource.create(splash, {
+	audioClipUrl: 'sounds/splash.mp3',
+	loop: false,
+	playing: false,
+  volume: 1
+})
+
+// SFX - Electricity - Maze End
+export const electricity = engine.addEntity()
+Transform.create(electricity, {
+  position: Vector3.create(40, 15, 80)
+})
+
+// Create AudioSource component
+AudioSource.create(electricity, {
+	audioClipUrl: 'sounds/electricity.mp3',
+	loop: false,
+	playing: false,
+  volume: 1
+})
+
+// SFX - Death - Kersplat Death
+export const death = engine.addEntity()
+Transform.create(death, {
+  position: Vector3.create(90, 90, 100)
+})
+
+// Create AudioSource component
+AudioSource.create(death, {
+	audioClipUrl: 'sounds/death.wav',
+	loop: false,
+	playing: false,
+  volume: 1
+})
 
 // Opening Scene - Fit Through Cave Teleport
 const clickableEntity2 = engine.addEntity()
@@ -938,130 +1061,6 @@ export const powerCubeEntity = createPowerCube(Vector3.create(96, 5.3, 33), 'mod
                   scale: Vector3.Zero(),
                   rotation: Quaternion.fromEulerDegrees(0, 205, 0)
                 })         
-
-// Music - Song 1 - Ambience Eery
-const song1 = engine.addEntity()
-
-// Create AudioSource component
-AudioSource.create(song1, {
-	audioClipUrl: 'sounds/hauntedCave.mp3',
-	loop: true,
-	playing: true,
-  volume: 1
-})
-
-// Music - Song 2 - Ambience Dripping
-const song2 = engine.addEntity()
-Transform.create(song2, {
-  position: Vector3.create(80, 50, 80)
-})
-
-// Create AudioSource component
-AudioSource.create(song2, {
-	audioClipUrl: 'sounds/waterDrips.mp3',
-	loop: true,
-	playing: true,
-  volume: 1
-})
-
-// Music - Song 3 - Beginning Soundtrack
-export const song3 = engine.addEntity()
-Transform.create(song3, {
-  position: Vector3.create(80, 80, 80)
-})
-
-
-// Create AudioSource component
-AudioSource.create(song3, {
-	audioClipUrl: 'sounds/dreamSus.mp3',
-	loop: true,
-	playing: true,
-  volume: 1
-})
-
-// Music - Song 4 - Zombie Fight Soundtrack
-export const song4 = engine.addEntity()
-Transform.create(song4, {
-  position: Vector3.create(40, 10, 40)
-})
-
-// Create AudioSource component
-AudioSource.create(song4, {
-	audioClipUrl: 'sounds/dreamFight.mp3',
-	loop: true,
-	playing: false,
-  volume: 1
-})
-
-// Music - Song 5 - Solving PowerCube Maze Soundtrack
-export const song5 = engine.addEntity()
-Transform.create(song5, {
-  position: Vector3.create(40, 10, 44)
-})
-
-// Create AudioSource component
-AudioSource.create(song5, {
-	audioClipUrl: 'sounds/dreamWork.mp3',
-	loop: true,
-	playing: false,
-  volume: 1
-})
-
-// SFX - Hammering - Zombie Fight Scene End
-export const hammer = engine.addEntity()
-Transform.create(hammer, {
-  position: Vector3.create(30, 10, 25)
-})
-
-// Create AudioSource component
-AudioSource.create(hammer, {
-	audioClipUrl: 'sounds/hammer.mp3',
-	loop: false,
-	playing: false,
-  volume: 1
-})
-
-// SFX - Splash - PowerCube End
-export const splash = engine.addEntity()
-Transform.create(splash, {
-  position: Vector3.create(40, 5, 40)
-})
-
-// Create AudioSource component
-AudioSource.create(splash, {
-	audioClipUrl: 'sounds/splash.mp3',
-	loop: false,
-	playing: false,
-  volume: 1
-})
-
-// SFX - Electricity - Maze End
-export const electricity = engine.addEntity()
-Transform.create(electricity, {
-  position: Vector3.create(40, 15, 80)
-})
-
-// Create AudioSource component
-AudioSource.create(electricity, {
-	audioClipUrl: 'sounds/electricity.mp3',
-	loop: false,
-	playing: false,
-  volume: 1
-})
-
-// SFX - Death - Kersplat Death
-export const death = engine.addEntity()
-Transform.create(death, {
-  position: Vector3.create(90, 90, 100)
-})
-
-// Create AudioSource component
-AudioSource.create(death, {
-	audioClipUrl: 'sounds/death.wav',
-	loop: false,
-	playing: false,
-  volume: 1
-})
 
 engine.addSystem(zombieKiller)
 engine.addSystem(moveSystem)
