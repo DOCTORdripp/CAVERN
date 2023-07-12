@@ -14,6 +14,37 @@ _Demo of CAVERN gameplay._
 
 A quest through a dreamlike world filled with Doge-like creatures. Help save the CAVERN and its inhabitants from certain doom, and find yourself some nice rewards.
 
+
+**Awesome Repository DCL scripts utilized**
+
+Custom Zombie Mini-Game
+
+https://github.com/decentraland/sdk7-goerli-plaza/tree/main/Zombie-shooter2
+
+https://github.com/decentraland/sdk7-goerli-plaza/tree/main/zombie-attack
+
+Custom Relic Barricade PowerCube
+
+https://github.com/decentraland/sdk7-goerli-plaza/tree/main/power-cube
+
+Custom NPCs - static & follow path
+
+https://github.com/decentraland/sdk7-goerli-plaza/tree/main/Simple-NPC
+
+Custom AI Skybox
+
+https://github.com/decentraland-scenes/skybox-ai-sdk7
+
+Custom Indicator Arrows
+
+https://github.com/DOCTORdripp/indicator-arrows 
+
+**AI utilized**
+https://www.blockadelabs.com/ - AI generated skybox
+
+https://chat.openai.com/chat - coding assistance
+
+
 ## Instructions
 
 Help your new friend through an embarrasing incident and help him find his uncle! You will be prompted to descend into the CAVERN where you should avoid fatal falls until you get to Uncle.
