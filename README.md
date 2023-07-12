@@ -1,8 +1,10 @@
 # CAVERN the game
 
-## Play it now
+## Play the game now
 
 https://play.decentraland.org/?realm=CAVERN.dcl.eth
+
+<img src="/images/scene-thumbnail.png">
 
 _Demo of CAVERN gameplay._
 
@@ -23,38 +25,6 @@ Next you will be prompted to find a hidden relic in this modified PowerCube demo
 The maze will be unlocked and there will be a 50% chance of mirroring the course. Find the mystical component, then bring it back to Uncle for inspection. He will need some time to inspect it, so come back after 1 week. The exit to the cave is on the far end of the swamp.
 
 More developments to come, including prize/giveaway mechanisms, additional hidden content, and token-gated experiences.
-
-## Built using
-
-**Awesome Repository DCL scripts utilized**
-
-Custom Zombie Mini-Game
-
-https://github.com/decentraland/sdk7-goerli-plaza/tree/main/Zombie-shooter2
-https://github.com/decentraland/sdk7-goerli-plaza/tree/main/zombie-attack
-
-Custom Relic Barricade PowerCube
-
-https://github.com/decentraland/sdk7-goerli-plaza/tree/main/power-cube
-
-Custom NPCs - static & follow path
-
-https://github.com/decentraland/sdk7-goerli-plaza/tree/main/Simple-NPC
-
-Custom AI Skybox
-
-https://github.com/decentraland-scenes/skybox-ai-sdk7
-
-Custom Indicator Arrows
-
-https://github.com/DOCTORdripp/indicator-arrows 
-
-**AI utilized**
-
-https://www.blockadelabs.com/ - AI generated skybox
-
-https://chat.openai.com/chat - coding assistance
-
 
 ## Try it out
 
@@ -97,3 +67,5 @@ The following files were taken from https://sketchfab.com/:
 
 - _Egyptian Portal from https://sketchfab.com/3d-models/egyptian-portal-b0ea24cabd874c4487026838dce85604
 - _Low Poly Environment Jungle Scene from https://sketchfab.com/3d-models/low-poly-environment-jungle-scene-b07cbb11f78b43a3a51405e6c77a629e
+
+

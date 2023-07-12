@@ -177,9 +177,11 @@ pointerEventsSystem.onPointerDown(
   }
   ,
   function () {
-    movePlayerTo({ newRelativePosition: Vector3.create(-22, 22, -22) });
+    movePlayerTo({ newRelativePosition: Vector3.create(-6, 22, -10),
+      cameraTarget: Vector3.create(20, 60, 10) });
     engine.removeEntity(cavePortal);
     Transform.getMutable(cavePortalBeatGame).scale = Vector3.create(0.8, 0.8, 0.8);
+    Transform.getMutable(prizeBoard).scale = Vector3.create(1.5, 1.5, 1.5);
     npc.talk(stuckDoge, beatGame)
     Transform.getMutable(indicatorArrowGreen).scale = Vector3.Zero();
   }
@@ -898,6 +900,16 @@ Transform.create(indicatorArrowGreen, {
   scale: Vector3.Zero(),
   rotation: Quaternion.fromEulerDegrees(0, 30, -90)
 })
+
+//prizeBoard exit finale
+export const prizeBoard = engine.addEntity()
+GltfContainer.create(prizeBoard, { src: 'models/prizeBoard.glb' })
+Transform.create(prizeBoard, {
+  position: Vector3.create(20, 16, -7),
+  scale: Vector3.Zero(),
+  rotation: Quaternion.fromEulerDegrees(0, -20, 30)
+})
+
 
 export const powerCubeEntity = createPowerCube(Vector3.create(96, 5.3, 33), 'models/powerRelic.glb')
 

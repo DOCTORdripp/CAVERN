@@ -147,7 +147,7 @@ console.log('helpSound playing')
 
 export let beatGame: Dialog[] = [
   {
-    text: `Come back each week for another chance to earn a wearable!`,
+    text: `Come back on the 1st of each month for another chance to earn a wearable!`,
     portrait: {
       path: 'images/marsha.png'
     },
