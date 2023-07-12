@@ -8,7 +8,7 @@ https://play.decentraland.org/?realm=CAVERN.dcl.eth
 
 _Demo of CAVERN gameplay._
 
-<img src="/screenshots/cavern-game.gif">
+<img src="/screenshots/cavern-game.gif"> <a href="https://play.decentraland.org/?realm=CAVERN.dcl.eth" target="_blank"><img src="/screenshots/play-now.png"></a>
 
 ## Description
 
